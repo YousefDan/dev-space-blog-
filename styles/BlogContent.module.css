@@ -1,0 +1,14 @@
+.blog {
+  margin-top: 1rem;
+}
+.blog h2,
+.blog h3 {
+  font-size: 27px;
+  color: blue;
+}
+.blog p {
+  margin: 10px 0;
+}
+.blog li {
+  font-weight: bold;
+}
