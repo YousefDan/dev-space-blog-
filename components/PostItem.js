@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CategoryLabel from "./CategoryLabel";
 
-const PostItem = ({ post }) => {
+const PostItem = ({ post, conpact }) => {
   const {
     cover_image,
     title,
@@ -14,14 +14,16 @@ const PostItem = ({ post }) => {
     slug,
   } = post;
   return (
-    <section className="shadow-2xl rounded-md p-5">
-      <Image
-        src={cover_image}
-        width={600}
-        height={400}
-        className="rounded-md"
-        alt=""
-      />
+    <section className="shadow-2xl rounded-md p-5 my-2">
+      {!conpact && (
+        <Image
+          src={cover_image}
+          width={600}
+          height={400}
+          className="rounded-md"
+          alt=""
+        />
+      )}
       <div className="flex justify-between items-center my-2">
         <span>{date}</span>
         <CategoryLabel>{category}</CategoryLabel>
@@ -34,6 +36,7 @@ const PostItem = ({ post }) => {
         </Link>
       </div>
       <p className="mt-2 text-gray-600">{excerpt}</p>
+      {!conpact && (
       <div className="flex justify-between items-center mt-3">
         <Link href={`/blog/${slug}`}>
           <a className="text-gray-100 rounded-md py-1 px-2 hover:bg-red-700 duration-300 ease-in-out transition bg-red-900">
@@ -48,7 +51,7 @@ const PostItem = ({ post }) => {
           />
           <strong>{author}</strong>
         </div>
-      </div>
+      </div>)}
     </section>
   );
 };

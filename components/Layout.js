@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Fragment } from "react";
 import Header from "./Header";
+import Search from "./Search";
 
 const Layout = ({ children, keywords, title, description }) => {
   return (
@@ -11,6 +12,7 @@ const Layout = ({ children, keywords, title, description }) => {
         <meta name="keywords" content={keywords} />
       </Head>
       <Header />
+      <Search />
       <main className="container mx-auto px-5 mt-7">{children}</main>
     </Fragment>
   );
